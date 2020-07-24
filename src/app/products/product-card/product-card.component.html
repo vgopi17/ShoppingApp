@@ -1,0 +1,27 @@
+<div  ><div *ngIf="product?.title" class="card"  >
+  <img [src]="product.imageUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>{{product.title}}</b></h5>
+    <p class="card-text"><b>{{product.price | currency:'USD':true}}</b></p>
+    
+  </div>
+  <div class="card-footer" >
+      <button (click)="addToCart(product)" *ngIf="getQuantity()==0 || getQuantity()==null && showActions"
+      class="btn btn-primary btn-block"   >Add to cart</button>
+      
+      <div style="display:flex" *ngIf="getQuantity()!=0 &&  getQuantity()!=null">
+        <div style="float:left">
+          <button class="btn btn-primary" (click)="removeFromCart(product)">-</button>
+        </div>
+        <div class="col-9" style="text-align: center;padding-top:6px;"><b>{{getQuantity()}} in Cart</b></div>
+        <div style="float:right">
+          <button class="btn btn-primary"  (click)="addToCart(product)">+</button>
+        </div>
+
+      </div>
+  </div>
+  </div>
+</div>
+
+
+   

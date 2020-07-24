@@ -1,0 +1,24 @@
+div.dropdown{
+
+    padding-top:10px;
+}
+a{
+    color:white;
+}
+.navbar-brand{
+    font-size: 2rem;
+}
+body{
+    font-size: 1.3rem;
+}
+.btn
+{
+    font-size:1.3rem;
+}
+.bg-dark{
+    background-color: black !important;
+}
+.badge-warning{
+    color:black!important;
+    background-color: #ffc107 !important;
+}

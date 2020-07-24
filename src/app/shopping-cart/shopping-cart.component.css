@@ -1,0 +1,10 @@
+.btn{
+
+    padding:2px 10px !important;
+}
+.thumbnail{
+    height: 80px;
+    width: 80px;
+    border-radius:100%;
+    background-size: cover;
+}

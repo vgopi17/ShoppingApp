@@ -1,0 +1,119 @@
+<!--
+<!DOCTYPE html>
+<html>
+
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+				
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="#">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png" alt="IMG">
+				</div>
+
+				<form #f="ngForm" class="login100-form validate-form" (ngSubmit)="login(f.value)">
+					<span class="login100-form-title">
+						Customer Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input ngModel name="email" #email="ngModel" id="email" required minlength="4" appForbiddenName="Ajai" class="input100" type="text"  placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                        
+                        <div *ngIf="email.touched && email.errors?.required"  class="errStyle">
+                            *Username is required.
+                          </div>
+                          <div *ngIf="email.touched && email.errors?.minlength" class="errStyle">
+                            *Name must be at least 4 characters long.
+                          </div>
+                        
+
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input ngModel name="password" required minlength="6" #password="ngModel" id="password" class="input100" type="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                        <div *ngIf="password.touched && password.errors?.minlength" class="errStyle">
+                            *Password must be at least 8 characters long.
+                          </div>
+                          <div *ngIf="password.touched && password.errors?.required" class="errStyle">
+                            *Password is required 
+                          </div>
+                          
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+                    </div>
+                    <!--<div *ngIf="email.touched &&  password.touched && getValidity()" class="errStyle">
+                        *Incorrect username or password
+                      </div> -->
+
+				<!--	<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+                -->
+				</form>
+			</div>
+		</div>
+	</div>

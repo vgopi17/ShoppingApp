@@ -1,0 +1,72 @@
+<a routerLink="./new" class="btn btn-primary">New Product</a>
+<p></p>
+<p>
+  <input #filterChar type="text" class="form-control" placeholder="Search.." (keyup)="filter(filterChar.value)">
+</p>
+<!--<data-table
+  [items]="items"
+  [itemCount]="itemCount"
+  (reload)="reloadEvents($event)">
+  <data-table-column
+    [property]="'title'"
+    [header]="'Title'"
+    [sortable]="true"
+    [resiezeable]="true"
+  >
+  </data-table-column>
+
+  <data-table-column
+    [property]="'price'"
+    [header]="'Price'"
+    [sortable]="true"
+    [resiezeable]="true"
+  >
+  </data-table-column>
+
+
+  </data-table-column>
+  <data-table-column
+    [property]="'id'""
+  >
+  </data-table-column>
+
+
+</data-table>-->
+<!--
+  Code to get the static data from services - VG 
+
+<table class="table" >
+<thead>
+  <th>Title</th>
+  <th>Price</th>
+  <th>Category</th>
+  <th></th>
+</thead>
+<tbody>
+  <tr *ngFor="let p of products">
+    <td>{{p.title}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.category | titlecase}}</td>
+    <td><a [routerLink]="['/admin/products/',p.id]">Edit</a></td>
+  </tr>
+</tbody>
+</table>
+-->
+
+
+<table class="table" >
+  <thead>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products$ | async ">
+      <td>{{p.payload.val().title}}</td>
+      <td>{{p.payload.val().price}}</td>
+      <td>{{p.payload.val().category | titlecase}}</td>
+      <td><a [routerLink]="['/admin/products/',p.key]">Edit</a></td>
+    </tr>
+  </tbody>
+  </table>
